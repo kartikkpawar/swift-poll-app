@@ -7,7 +7,6 @@ import PollHeader from "../../Components/Poll Header/PollHeader";
 
 import "./CreatePoll.css";
 import PollCreated from "../../Components/Poll Created/PollCreated";
-import { customAlphabet } from "nanoid";
 import { Modal } from "@material-ui/core";
 import axios from "axios";
 

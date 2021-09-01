@@ -31,6 +31,12 @@ const ViewPoll = () => {
   const pollUrl = `${process.env.REACT_APP_CLIENT_URL}poll/result/${id}`;
 
   useEffect(() => {
+    const pollValidatior = () => {
+      const pollSubmitted = localStorage.getItem(id);
+      if (pollSubmitted !== null) {
+        setPollSubmitted(true);
+      }
+    };
     axios
       .get(`${pollServerUrl}/getPollData/${id}`)
       .then((res) => {
@@ -46,14 +52,7 @@ const ViewPoll = () => {
       setPollAnswers(payload);
       setTotalVotes(totalVotesHelper(payload));
     });
-  }, []);
-
-  const pollValidatior = () => {
-    const pollSubmitted = localStorage.getItem(id);
-    if (pollSubmitted !== null) {
-      setPollSubmitted(true);
-    }
-  };
+  }, [id]);
 
   const urlCopiedhandler = () => {
     toast.success("Copied", {

@@ -16,25 +16,24 @@ const SubmitPoll = () => {
   const [pollVoted, setPollVoted] = useState(false);
 
   useEffect(() => {
+    const pollValidatior = (length) => {
+      const pollSubmitted = localStorage.getItem(id);
+      if (pollSubmitted !== null) {
+        const temp = new Array(length).fill("");
+        temp[pollSubmitted] = "selected";
+        setPollVoted(true);
+        return setAnsSelectedArray(temp);
+      }
+    };
     axios.get(`${pollServerUrl}/getPollData/${id}`).then((res) => {
       console.log(res.data);
       setPoll({ question: res?.data?.qustion, ans: res?.data?.ansArray });
       setAnsSelectedArray(new Array(res?.data?.ansArray.length).fill(""));
       pollValidatior(res?.data?.ansArray.length);
     });
-  }, []);
+  }, [id]);
 
   const history = useHistory();
-
-  const pollValidatior = (length) => {
-    const pollSubmitted = localStorage.getItem(id);
-    if (pollSubmitted !== null) {
-      const temp = new Array(length).fill("");
-      temp[pollSubmitted] = "selected";
-      setPollVoted(true);
-      return setAnsSelectedArray(temp);
-    }
-  };
 
   const optionSelectedHandler = (index) => {
     if (!pollVoted) {
