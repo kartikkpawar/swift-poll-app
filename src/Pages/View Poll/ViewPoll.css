@@ -1,0 +1,279 @@
+.viewPollContainer {
+  height: 100vmin;
+}
+.maxWidthContainer {
+  background-color: #f7f5fa;
+  display: flex;
+  height: 74%;
+}
+.conatiner404 {
+  margin: 0 auto;
+  max-width: 1350px;
+  height: 100%;
+  width: 100%;
+  background-color: #f7f5fa;
+}
+.viewPoll {
+  margin: 0 auto;
+  max-width: 1350px;
+  min-height: 74%;
+  max-height: max-content;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  flex-direction: column;
+}
+.quesHolder {
+  display: flex;
+  margin-bottom: 20px;
+}
+.viewPollQuestion {
+  max-width: 70%;
+  width: 70%;
+}
+.submitQuestion {
+  font-size: 40px;
+  font-weight: 700;
+}
+.optionsSharing {
+  display: flex;
+  height: 100%;
+}
+.optionsContainer {
+  flex: 0.7;
+}
+.submitPollQuestion {
+  padding: 20px;
+}
+
+.optionsQuestion {
+  flex: 0.7 !important;
+}
+.sharingSubmitContainer {
+  flex: 0.3;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  flex-direction: column;
+}
+
+.option {
+  background-color: #fff;
+  box-shadow: 19px 22px 29px -20px rgba(0, 0, 0, 0.29);
+  height: 150px;
+  width: 650px;
+  padding: 15px;
+  margin-top: 20px;
+}
+.valPer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+/* styling of the progress bar */
+.progressBar {
+  width: 100%;
+  height: 10px;
+  background-color: #e2e8f0;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.progressStatus {
+  background-color: #5a20cb80;
+  height: 10px;
+  border-radius: 5px;
+}
+/* progress bar styling ends */
+.viewPollCount {
+  color: #49d97f;
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 22px;
+}
+.submitPollButton {
+  background-color: #49d97f;
+  height: 65px;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  color: #fff;
+  font-size: 1.4rem;
+  border-radius: 10px;
+  user-select: none;
+  cursor: pointer;
+}
+.submitPollButtonDisabled {
+  background-color: #00000070 !important;
+}
+.submitPollButton:hover {
+  background-color: #3ac26e;
+}
+.votesShare {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.totalVoteHolder {
+  background-color: #fff;
+  height: 65px;
+  width: 83%;
+  display: flex;
+  flex-direction: column;
+  color: #000;
+  border-radius: 10px;
+  margin-top: 25px;
+  padding: 25px 20px;
+}
+.tvText {
+  color: #719ed0;
+  font-weight: 500;
+  font-size: 18px;
+}
+.tvVotes {
+  color: #000;
+  font-weight: 600;
+  font-size: 3.2rem;
+}
+.sharePoll {
+  margin-top: 5px;
+  height: max-content;
+  background-color: #fff;
+  width: 83%;
+  border-radius: 10px;
+  padding: 25px 20px;
+}
+.shareText {
+  color: #719ed0;
+  font-size: 18px;
+}
+.shareButton {
+  display: flex;
+  margin-top: 15px;
+  justify-content: flex-start;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.sharebuttonIcon {
+  font-size: 24px;
+}
+.shareButtonText {
+  font-size: 18px;
+  margin-left: 10px;
+}
+.modalBody {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+.qrHolder {
+  height: max-content;
+  width: max-content;
+  background-color: #fff;
+  padding: 50px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  border: none !important;
+  outline: none !important;
+  justify-content: center;
+  align-items: center;
+}
+.qrText {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #49d97f;
+  text-transform: uppercase;
+}
+
+@media screen and (min-device-width: 360px) and (max-device-width: 1024px) {
+  .maxWidthContainer {
+    padding: 0 10px;
+  }
+
+  .optionsContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  .option {
+    height: 110px;
+    width: 90%;
+    padding: 15px;
+    margin-top: 20px;
+  }
+  .optionsSharing {
+    flex-direction: column;
+  }
+  .viewPollQuestion {
+    max-width: 95%;
+    width: 95%;
+  }
+  .submitQuestion {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .valPer {
+    font-size: 25px;
+    font-weight: 600;
+  }
+  .viewPollCount {
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  .sharingSubmitContainer {
+    position: sticky;
+    background-color: #fff;
+    border-top: 2px solid #f7f5fa;
+    padding: 9px;
+    width: 94%;
+    bottom: 0;
+    height: 10%;
+    flex-direction: column-reverse;
+    border-radius: 5px;
+  }
+  .submitPollButton {
+    height: 40px;
+    width: 300px;
+    font-weight: 600;
+    font-size: 1.4rem;
+  }
+
+  .votesShare {
+    flex-direction: row;
+  }
+  .tvText {
+    font-size: 18px;
+  }
+  .tvVotes {
+    font-size: 22px;
+  }
+  .shareText,
+  .shareButtonText {
+    display: none;
+  }
+  .sharePoll {
+    /* border: 1px solid red; */
+    display: flex;
+    height: max-content;
+    justify-content: space-between;
+    background-color: #fff;
+    width: 83%;
+    border-radius: 10px;
+    padding: 25px 20px;
+  }
+  .totalVoteHolder {
+    background-color: #fff;
+  }
+}

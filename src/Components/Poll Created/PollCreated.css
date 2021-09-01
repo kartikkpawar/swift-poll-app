@@ -1,0 +1,102 @@
+.pollCreatedContainer {
+  height: max-content;
+  width: 600px;
+  padding: 30px 40px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+.createdIcon {
+  height: 100px;
+  width: 100px;
+}
+.successMessage {
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 40px;
+}
+.pollUrl {
+  margin-top: 20px;
+}
+.urlHolder {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+.successUrl {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #00000015;
+  max-width: 445px;
+  width: 445px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+}
+.adminUrl {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #00000015;
+  width: 445px;
+  max-width: 445px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+}
+.successCopyButton {
+  margin-left: 5px;
+  padding: 10px 15px;
+  color: #fff;
+  background-color: #000;
+  border-radius: 5px;
+  user-select: none;
+  cursor: pointer;
+}
+.visitButtons {
+  display: flex;
+}
+.continueButton {
+  background-color: #49d97f;
+  color: #fff;
+  margin-right: 20px;
+}
+@media screen and (min-device-width: 360px) and (max-device-width: 1024px) {
+  .pollCreatedContainer {
+    overflow-x: hidden;
+    width: 300px !important;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 1.8rem 2.1rem;
+
+    justify-content: flex-start;
+  }
+  .createdIcon {
+    height: 70px;
+    width: 70px;
+  }
+  .successMessage {
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 30px;
+  }
+  .adminUrl {
+    padding: 7px;
+    width: 200px;
+    max-width: 200px;
+  }
+  .successUrl {
+    padding: 7px;
+    width: 200px;
+    max-width: 200px;
+  }
+  .continueButton {
+    margin-right: 10px;
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+}
