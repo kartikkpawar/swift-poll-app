@@ -1,18 +1,14 @@
 .viewPollContainer {
   height: 100vmin;
+  position: relative;
 }
 .maxWidthContainer {
   background-color: #f7f5fa;
   display: flex;
-  height: 74%;
+  min-height: 74%;
+  height: max-content;
 }
-.conatiner404 {
-  margin: 0 auto;
-  max-width: 1350px;
-  height: 100%;
-  width: 100%;
-  background-color: #f7f5fa;
-}
+
 .viewPoll {
   margin: 0 auto;
   max-width: 1350px;
@@ -42,6 +38,7 @@
 }
 .optionsContainer {
   flex: 0.7;
+  background-color: #f7f5fa;
 }
 .submitPollQuestion {
   padding: 20px;
@@ -198,9 +195,13 @@
 
 @media screen and (min-device-width: 360px) and (max-device-width: 1024px) {
   .maxWidthContainer {
-    padding: 0 10px;
-  }
+    /* padding: 0 10px; */
 
+    width: 100%;
+  }
+  .viewPoll {
+    padding-bottom: 0;
+  }
   .optionsContainer {
     display: flex;
     flex-direction: column;
@@ -212,9 +213,7 @@
     padding: 15px;
     margin-top: 20px;
   }
-  .optionsSharing {
-    flex-direction: column;
-  }
+
   .viewPollQuestion {
     max-width: 95%;
     width: 95%;
@@ -232,19 +231,24 @@
     font-weight: 600;
     font-size: 18px;
   }
+  .optionsSharing {
+    margin: 0 !important;
+    padding: 0;
+    flex-direction: column;
+  }
   .sharingSubmitContainer {
     position: sticky;
-    background-color: #fff;
-    border-top: 2px solid #f7f5fa;
-    padding: 9px;
-    width: 94%;
     bottom: 0;
-    height: 10%;
-    flex-direction: column-reverse;
-    border-radius: 5px;
+    padding: 10px;
+    margin: 0;
+    margin-left: -10px;
+    background-color: #fff;
+    width: 100%;
+    z-index: 100 !important;
   }
+
   .submitPollButton {
-    height: 40px;
+    min-height: 40px;
     width: 300px;
     font-weight: 600;
     font-size: 1.4rem;
@@ -252,19 +256,22 @@
 
   .votesShare {
     flex-direction: row;
+    background-color: #fff;
+    padding: -10px;
   }
   .tvText {
     font-size: 18px;
+    background-color: #fff;
   }
   .tvVotes {
     font-size: 22px;
+    background-color: #fff;
   }
   .shareText,
   .shareButtonText {
     display: none;
   }
   .sharePoll {
-    /* border: 1px solid red; */
     display: flex;
     height: max-content;
     justify-content: space-between;

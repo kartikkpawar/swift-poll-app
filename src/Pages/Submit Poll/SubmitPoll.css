@@ -4,13 +4,13 @@
 .submitPoll {
   background-color: #f7f5fa;
   min-height: 74%;
-  max-height: max-content;
 }
 .quesOptionsReturn {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 }
+
 .submitOption {
   margin-top: 40px;
   width: 665px;
@@ -62,12 +62,15 @@
   width: max-content !important;
   padding: 0 50px;
   margin-bottom: 20px;
+  margin-right: 10px;
 }
 .submitedResponse {
   margin-top: 20px;
   width: max-content !important;
+
   padding: 0 50px;
   margin-bottom: 20px;
+  margin-right: 10px;
   background-color: #00000070 !important;
 }
 .goResult {
@@ -77,6 +80,9 @@
   margin-right: 15px;
 }
 @media screen and (min-device-width: 360px) and (max-device-width: 1024px) {
+  .submitPoll {
+    height: 75vmax;
+  }
   .submitOption {
     width: 89%;
     margin: 40px auto;
@@ -97,6 +103,12 @@
     padding: 10px;
     display: flex;
     font-size: 18px !important;
+  }
+  .submitedResponse {
+    height: 40px;
+    padding: 10px;
+
+    background-color: #00000070 !important;
   }
   .submitResponse > span {
     text-align: center;
