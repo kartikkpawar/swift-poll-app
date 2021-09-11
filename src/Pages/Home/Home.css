@@ -56,8 +56,8 @@
 }
 .pollInfoContainer {
   display: flex;
-  max-width: 15000px;
-  width: 1500px;
+  max-width: 1500px;
+  width: 1200px;
   margin: 0 auto;
   margin-bottom: 20px;
   justify-content: space-evenly;
