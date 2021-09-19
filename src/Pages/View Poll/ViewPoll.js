@@ -14,6 +14,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { percentageCounter, totalVotesHelper } from "../../HelperFunctions";
 import axios from "axios";
 import io from "socket.io-client";
+import SkeletonLoader from "../../Components/SkeletonLoader";
 
 const pollServerUrl = process.env.REACT_APP_URL;
 
@@ -28,6 +29,7 @@ const ViewPoll = () => {
   const [totalVotes, setTotalVotes] = useState(0);
   const [pollSubmitted, setPollSubmitted] = useState(false);
   const [redirect, setRedirect] = useState(false);
+  const [pollLoad, setPollLoad] = useState(false);
   const pollUrl = `${process.env.REACT_APP_CLIENT_URL}poll/result/${id}`;
 
   useEffect(() => {
@@ -43,6 +45,7 @@ const ViewPoll = () => {
         setPollQuestions(res.data.question);
         setPollAnswers(res.data.ansArray);
         setTotalVotes(totalVotesHelper(res.data.ansArray));
+        setPollLoad(true);
         pollValidatior();
       })
       .catch((err) => setRedirect(true));
@@ -77,35 +80,41 @@ const ViewPoll = () => {
           </div>
           <div className="optionsSharing">
             <div className="optionsContainer">
-              {pollAnswers?.length > 1 &&
-                pollAnswers.map(
-                  (ans) =>
-                    ans.value && (
-                      <div className="option">
-                        <div className="valPer">
-                          <span className="submitValue">{ans.value}</span>
-                          <span className="submitPercentage">
-                            {" "}
-                            {percentageCounter(totalVotes, ans.count)}%
-                          </span>
-                        </div>
-                        <div className="progressBar">
-                          <div
-                            className="progressStatus"
-                            style={{
-                              width: `${percentageCounter(
-                                totalVotes,
-                                ans.count
-                              )}%`,
-                            }}
-                          ></div>
-                        </div>
-                        <div className="viewPollCount">
-                          <span className="vote">{ans.count} Votes</span>
-                        </div>
-                      </div>
-                    )
-                )}
+              {!pollLoad ? (
+                <SkeletonLoader />
+              ) : (
+                <>
+                  {pollAnswers?.length > 1 &&
+                    pollAnswers.map(
+                      (ans) =>
+                        ans.value && (
+                          <div className="option">
+                            <div className="valPer">
+                              <span className="submitValue">{ans.value}</span>
+                              <span className="submitPercentage">
+                                {" "}
+                                {percentageCounter(totalVotes, ans.count)}%
+                              </span>
+                            </div>
+                            <div className="progressBar">
+                              <div
+                                className="progressStatus"
+                                style={{
+                                  width: `${percentageCounter(
+                                    totalVotes,
+                                    ans.count
+                                  )}%`,
+                                }}
+                              ></div>
+                            </div>
+                            <div className="viewPollCount">
+                              <span className="vote">{ans.count} Votes</span>
+                            </div>
+                          </div>
+                        )
+                    )}
+                </>
+              )}
             </div>
             <div className="sharingSubmitContainer">
               <div
