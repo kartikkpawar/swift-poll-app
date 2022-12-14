@@ -18,7 +18,7 @@ import SkeletonLoader from "../../Components/SkeletonLoader";
 
 const pollServerUrl = process.env.REACT_APP_URL;
 
-const socket = io.connect("https://swift-poll.herokuapp.com");
+const socket = io.connect("https://swift-poll.onrender.com");
 
 const ViewPoll = () => {
   const history = useHistory();
