@@ -49,8 +49,8 @@ const SubmitPoll = () => {
       ? axios
           .post(`${pollServerUrl}/updatePoll/${id}/${selectedAnsIndex}`)
           .then((res) => {
-            // localStorage.setItem(id, selectedAnsIndex);
-            // setPollVoted(true);
+            localStorage.setItem(id, selectedAnsIndex);
+            setPollVoted(true);
             toast.success(res.data.message, {
               position: "top-right",
               autoClose: 5000,
