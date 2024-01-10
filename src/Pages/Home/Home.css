@@ -2,20 +2,23 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  height: 100vmin;
+  height: 100vh;
+  padding: 40px;
+  box-sizing: border-box;
 }
 .homeContainer {
   width: 100%;
   display: flex;
   height: 100%;
+  gap: 50px;
+  margin: 0 auto;
+  width: max-content;
 }
 .containerLeft {
-  flex: 0.4;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
   flex-direction: column;
 }
 .displayTextHome {
@@ -43,7 +46,6 @@
   color: #00000070;
 }
 .containerRight {
-  flex: 0.6;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,6 +88,8 @@
   .homeContainer {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    gap: 20px;
   }
 
   .pollTagLine {
@@ -110,7 +114,7 @@
   }
   .displayTextHome {
     font-weight: 500;
-    font-size: 30px;
+    font-size: 26px;
   }
   .pollInfoContainer {
     flex-direction: column;
