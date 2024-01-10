@@ -5,11 +5,13 @@
   height: 100vh;
   padding: 40px;
   box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
 }
 .homeContainer {
   width: 100%;
   display: flex;
-  height: 100%;
   gap: 50px;
   margin: 0 auto;
   width: max-content;
@@ -83,7 +85,8 @@
   .home {
     flex-direction: column;
     height: max-content;
-    padding-top: 10px;
+    padding: 40px 20px;
+    gap: unset;
   }
   .homeContainer {
     display: flex;
@@ -99,6 +102,7 @@
     padding: 0 13px;
     margin-top: 30px;
     margin-bottom: 50px;
+    order: 2;
   }
   .homeCreateButton {
     height: 60px;
@@ -107,6 +111,7 @@
   .containerRight {
     align-items: center;
     height: 100%;
+    order: 1;
   }
   .pollImage {
     width: 266px;
