@@ -121,7 +121,13 @@
 .createPollButton {
   background-color: #49d97f;
   color: #fff;
+  border: none;
 }
+
+.createPollButtonDisabled {
+  background-color: #cecece;
+}
+
 .addOptionIcon {
   font-size: 25px;
   margin-left: 10px;

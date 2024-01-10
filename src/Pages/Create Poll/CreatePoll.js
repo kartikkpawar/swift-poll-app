@@ -15,6 +15,7 @@ const CreatePoll = ({ adminId }) => {
   const [ansHolder, setAnsHolder] = useState(["", ""]);
   const [pollCreated, setPollCreated] = useState(false);
   const [question, setQuestion] = useState();
+  const [loading, setLoading] = useState(false);
 
   const params = useParams();
 
@@ -91,10 +92,13 @@ const CreatePoll = ({ adminId }) => {
         question,
       };
 
+      setLoading(true);
+
       axios
         .post(`${pollServerUrl}/createPoll`, poll)
         .then((res) => {
           setPollCreated(true);
+          setLoading(false);
         })
         .catch((err) => {
           toast.error(err.response.data.error, {
@@ -106,6 +110,7 @@ const CreatePoll = ({ adminId }) => {
             draggable: false,
             progress: undefined,
           });
+          setLoading(false);
         });
     }
   };
@@ -172,13 +177,22 @@ const CreatePoll = ({ adminId }) => {
             </div>
             <hr className="createPollDivder" />
             <div className="resCreateDiv">
-              <div
-                className="createPageButton createPollButton"
+              <button
+                className={`createPageButton createPollButton ${
+                  loading && "createPollButtonDisabled"
+                }`}
                 onClick={submitPoll}
+                disabled={loading}
               >
-                <span>Create Poll</span>
-                <TiFlash className="addOptionIcon" />
-              </div>
+                {loading ? (
+                  "Creating Poll..."
+                ) : (
+                  <>
+                    <span>Create Poll</span>
+                    <TiFlash className="addOptionIcon" />
+                  </>
+                )}
+              </button>
             </div>
           </div>
         </div>
